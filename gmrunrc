@@ -1,0 +1,31 @@
+#Mostrar ocultos
+ShowDotFiles = 1
+#geometry
+Width = 400
+Top = 400
+Left = 450
+#Tiempo en el cual gmrun simulará una pulsación de TAB
+TabTimeout = 0
+
+#Configuración de Terminal
+Terminal = terminator
+TermExec = ${Terminal} --command
+AlwaysInTerm = ssh telnet ftp lynx mc vi vim cat top sudo man info irssi
+
+#Historia
+ShowLast = 1
+History = 500
+
+#Manipuladores Handlers
+URL_http = x-www-browser %u
+URL_info = terminator --command info %s
+URL_man = ${TermExec} 'man %s'
+URL_info = ${TermExec} 'info %s'
+URL_file = exo-open %s
+URL_f = exo-open %s
+URL_g = xdg-open 'http://www.google.com/search?q=%s'
+#para buscar una en inglés (dictionary.reference.com)
+URL_e = xdg-open 'http://dictionary.reference.com/browse/%s'
+#Para buscar en el DRAE
+URL_d  = xdg-open 'http://lema.rae.es/drae/?val=%s'
+

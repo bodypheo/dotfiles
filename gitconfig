@@ -1,0 +1,11 @@
+[user]
+	name = Juanmi
+	email = jmjimenezf@uma.es
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+[alias]
+		st = status -sb
+
+#alias de : https://ochronus.com/git-tips-from-the-trenches/

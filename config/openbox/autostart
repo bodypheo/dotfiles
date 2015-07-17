@@ -1,0 +1,63 @@
+## Openbox autostart.sh
+## ====================
+## Inspired by #! autostart
+## Note*: some programs, such as 'nm-applet' are run via XDG autostart.
+## Run '/usr/lib/openbox/openbox-xdg-autostart --list' to list any
+## XDG autostarted programs.
+##
+## More information about this can be found at:
+## http://openbox.org/wiki/Help:Autostart
+##
+## If you do something cool with your autostart script and you think others
+## could benefit from your hack, please consider sharing it at:
+## http://crunchbanglinux.org/forums/
+##
+## Have fun! :)
+
+## Group start:
+## 1. nitrogen - restores wallpaper
+## 2. compositor
+## 3. sleep - give compositor time to start
+## 4. conky
+## 5. tint2 panel
+#xrandr --output  VGA-0 --mode 1920x1080 --primary --output DVI-0 --mode 1366x768 --right-of VGA-0
+#xrandr --output  DVI-0 --mode 1366x768 --primary --output VGA-0 --mode 1600x900 --right-of DVI-0 && sleep 5s &
+#xrandr --output  DVI-I-1 --mode 1366x768 --primary --output VGA-2 --mode 1600x900 --right-of DVI-I-1 && sleep 5s &
+(\
+nitrogen --restore && \
+sleep 2s && \
+tint2 \
+) &
+
+
+## Start Thunar Daemon
+(sleep 3 && thunar --daemon) &
+
+## Start xscreensaver
+xscreensaver -no-splash &
+
+
+## cb-fortune - have Statler say a little adage
+#(sleep 120s && cb-fortune) &
+
+## GNOME PolicyKit and Keyring
+(\
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 && \
+/usr/bin/gnome-keyring-daemon --start --components=ssh && \
+/usr/bin/gnome-keyring-daemon --start --components=secrets && \
+/usr/bin/gnome-keyring-daemon --start --components=pkcs11 && \
+/usr/bin/gnome-keyring-daemon --start --components=gpg \
+) &
+#Inicio del actualizador de paquetes
+#update-notifier --startup-delay 30 &
+# Programas de inicio
+#(chromium && sleep 2s) &
+(sakura -c 80 -r 20 -h -t 'Tareas para hoy' -e 'task') &
+#setxkbmap -option "grp:switch,grp:shifts_toggle,grp_led:scroll" -layout "es,gb" &
+#(sleep 3s && xxkb) &
+#Iniciar icedove
+(sleep 5s && thunderbird) &
+(sleep 10s && volumeicon) &
+
+
+
