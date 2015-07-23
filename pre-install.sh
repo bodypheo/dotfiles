@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo pacman -S --noconfirm vim git openbox oblogout obconf obmenu openbox-themes tint2 conky remmina terminator sakura nitrogen gsimplecal cmake dropbox virtualbox xscreensaver chromium lxappearance-obconf nautilus ufw-extras perl-file-mimeinfo volume-icon terminator geany geany-plugins gimp scrot evince p7zip
+sudo pacman -S --noconfirm vim git openbox oblogout obconf obmenu openbox-themes tint2 conky remmina terminator sakura nitrogen gsimplecal cmake dropbox virtualbox xscreensaver chromium lxappearance-obconf nautilus ufw-extras perl-file-mimeinfo volume-icon terminator geany geany-plugins gimp scrot evince p7zip bash-completion imagemagick
 sudo rm /usr/bin/python
 sudo ln -s /usr/bin/python2.7 /usr/bin/python
 
