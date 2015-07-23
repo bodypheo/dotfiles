@@ -57,7 +57,7 @@ xscreensaver -no-splash &
 #(sleep 3s && xxkb) &
 #Iniciar icedove
 (sleep 5s && thunderbird) &
-(sleep 10s && volumeicon) &
+#(sleep 10s && volumeicon) &
 
 
 
